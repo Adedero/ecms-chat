@@ -11,7 +11,7 @@ import { markdownToHTML } from "./utils/markdownToHTML";
 import useLocalStorage from "./hooks/use-local-storage";
 
 const gemini = createGoogleGenerativeAI({
-  apiKey: import.meta.env.VITE_API_KEY
+  apiKey: import.meta.env.VITE_API_KEY,
 });
 
 export default function App() {
@@ -71,15 +71,15 @@ export default function App() {
     }
   }
   return (
-    <div className="p-5 h-screen overflow-hidden relative">
+    <div className="p-5 h-dvh overflow-hidden relative">
       <div className="mx-auto max-w-2xl h-full rounded-lg border border-slate-300 backdrop-blur-md">
-        <Header/>
+        <Header />
         <ChatArea messages={messages} loading={loading} />
         <Footer onSubmit={handleSubmit} />
       </div>
       <img
-        src="/bg-1.webp"
-        className="-z-1 absolute w-screen h-screen left-0 top-0 object-cover"
+        src="/bg.webp"
+        className="-z-1 absolute w-dvw h-dvh left-0 top-0 object-cover brightness-75"
       />
     </div>
   );
