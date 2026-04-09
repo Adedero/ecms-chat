@@ -11,7 +11,7 @@ import { markdownToHTML } from "./utils/markdownToHTML";
 import useLocalStorage from "./hooks/use-local-storage";
 
 const gemini = createGoogleGenerativeAI({
-  apiKey: import.meta.env.API_KEY
+  apiKey: import.meta.env.VITE_API_KEY
 });
 
 export default function App() {
