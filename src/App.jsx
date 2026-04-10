@@ -4,15 +4,15 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 import { generateText } from "ai";
-import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { systemPrompt } from "./constants/prompts";
 import { formatDate } from "./utils/format-date";
 import { markdownToHTML } from "./utils/markdownToHTML";
 import useLocalStorage from "./hooks/use-local-storage";
+import { createXai } from "@ai-sdk/xai";
+import { createModel, getModel } from "./utils/ai-utils";
 
-const gemini = createGoogleGenerativeAI({
-  apiKey: import.meta.env.VITE_API_KEY,
-});
+const model = createModel(import.meta.env.VITE_MODEL);
+// const xai = createXai({ apiKey: import.meta.env.VITE_API_KEY });
 
 export default function App() {
   const [messages, setMessages] = useLocalStorage("messages", []);
@@ -40,7 +40,7 @@ export default function App() {
 
     try {
       const { text } = await generateText({
-        model: gemini("gemini-2.5-flash"),
+        model: model(getModel(import.meta.env.VITE_MODEL)),
         system: systemPrompt,
         prompt: message,
       });

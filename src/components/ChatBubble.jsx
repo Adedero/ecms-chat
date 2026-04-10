@@ -34,11 +34,11 @@ export default function ChatBubble({
         {children && children}
         {!children && (
           <>
-            <p dangerouslySetInnerHTML={{ __html: message }} />
+            <div className="whitespace-pre-wrap chat_bubble" dangerouslySetInnerHTML={{ __html: message }} />
             {timestamp && (
-              <div className="text-xs text-slate-400 mt-1 text-right">
+              <p className="text-xs text-slate-400 mt-1 text-right">
                 {timestamp}
-              </div>
+              </p>
             )}
           </>
         )}
