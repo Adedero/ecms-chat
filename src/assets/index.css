@@ -1,13 +1,7 @@
 @import "tailwindcss";
 
 .chat_bubble {
-  /* Paragraph spacing */
-  p {
-    margin-bottom: 0.5rem;
-  }
-  p:last-child {
-    margin-bottom: 0;
-  }
+
 
   /* List Styles */
   ol {

@@ -1,3 +1,4 @@
+import { createDeepSeek } from "@ai-sdk/deepseek";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createXai } from "@ai-sdk/xai";
 
@@ -9,6 +10,8 @@ export const createModel = (model) => {
       return createXai({ apiKey });
     case "gemini":
       return createGoogleGenerativeAI({ apiKey });
+    case "deepseek":
+      return createDeepSeek({ apiKey });
     default:
       throw new Error("Model not found");
   }
@@ -20,6 +23,8 @@ export const getModel = (model) => {
       return "grok-4.20-0309-reasoning";
     case "gemini":
       return "gemini-2.5-flash";
+    case "deepseek":
+      return "deepseek-chat";
     default:
       return;
   }
