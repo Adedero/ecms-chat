@@ -19,7 +19,7 @@ export default function Header() {
           <h1 className="font-bold">ECMS Bot</h1>
           <div className="flex items-center gap-2">
             <div className="size-2 rounded-full bg-green-500"></div>
-            <p className="text-slate-300 text-sm">online</p>
+            <p className="text-slate-400 text-sm">online</p>
           </div>
         </div>
 

@@ -8,7 +8,6 @@ import { systemPrompt } from "./constants/prompts";
 import { formatDate } from "./utils/format-date";
 import { markdownToHTML } from "./utils/markdownToHTML";
 import useLocalStorage from "./hooks/use-local-storage";
-import { createXai } from "@ai-sdk/xai";
 import { createModel, getModel } from "./utils/ai-utils";
 
 const model = createModel(import.meta.env.VITE_MODEL);
@@ -77,10 +76,6 @@ export default function App() {
         <ChatArea messages={messages} loading={loading} />
         <Footer onSubmit={handleSubmit} />
       </div>
-      <img
-        src="/bg.webp"
-        className="-z-1 absolute w-dvw h-dvh left-0 top-0 object-cover brightness-75"
-      />
     </div>
   );
 }
